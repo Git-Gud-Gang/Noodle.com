@@ -17,3 +17,7 @@ body {
   justify-content: space-around;
   flex-grow: 1;
 }
+
+.noodle-image {
+size: 150%;
+}
