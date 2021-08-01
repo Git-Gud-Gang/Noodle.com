@@ -147,6 +147,9 @@
 .noodle_form input, .noodle_form select {
   padding: 6px;
   outline: none;
+  background: rgba(240, 233, 225, 0.8);
+  border-color: white;
+  border-style: hidden;
 }
 
 .noodle_form label {
@@ -157,7 +160,7 @@
 
 .add {
   margin-top: 0.7rem;
-  background-color: #ddb9d5;
+  background-color: #e4b1d9;
   border-radius: 4px;
   outline: none;
   font-family: 'Noto Sans', sans-serif;
