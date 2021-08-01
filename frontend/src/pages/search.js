@@ -2,16 +2,17 @@ import React, { useState } from 'react';
 import '../styling/index.css';
 import '../styling/App.css';
 import ContentList from '../components/ContentList';
+import SelectEl from '../components/SelectEl';
 
 const initialContents = [
   {
     id: "cat",
-    content: "Make the workshop last minute",
+    content: "Make the workgrgrgrshop last minute",
     type: "joke"
   },
   {
     id: "cat",
-    content: "Make the workshop last minute",
+    content: "Make the wsadsadorkshop last minute",
     type: "fact"
   },
   {
@@ -24,12 +25,15 @@ const initialContents = [
 
 function Search() {
   const [cont, setContents] = useState(initialContents)
+  const [selected, setSelected] = useState(null)
 
-  function handleClick(index) {
-    const newContents = [...cont];
-    newContents[index].isComplete = !cont[index].isComplete;
+  function handleClick(contentEl) {
+    setSelected(contentEl)
+    console.log(contentEl.id)
+    // const newContents = [...cont];
+    // newContents[index].isComplete = !cont[index].isComplete;
     // newContents[index].description = "Hello World!!"
-    setContents(newContents);
+    // setContents(newContents);
   }
 
     return (
@@ -57,14 +61,7 @@ function Search() {
                 <p>
                     Search results:
                 </p>
-                    <nav>
-                      <ul>
-                        <li class="nav-item"><a href="#">Home</a></li>
-                        <li class="nav-item"><a href="#">Products</a></li>
-                        <li class="nav-item"><a href="#">Store</a></li>
-                        <li class="nav-item"><a href="#">Team</a></li>
-                      </ul>
-                    </nav>
+
                 <ContentList cont={cont} handleClick={handleClick} />
 
                 </div>
@@ -73,14 +70,18 @@ function Search() {
                 <p>
                     View results here:
                 </p>
+                <SelectEl selected={selected} />
                 </div>
 
            </div>
 
         </div>
+        
       </div>
-
+    
   );
+
+  
 }
 
 export default Search;

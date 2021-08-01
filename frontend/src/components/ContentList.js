@@ -5,8 +5,9 @@ const StyledDiv = styled.div`
     padding: 12px 16px;
     display: block;
     background-color: white;
+    color: black;
     
-    width: 100%;
+    width: 85%;
     margin: auto;
 
     border: 2px solid black;
@@ -21,17 +22,26 @@ const StyledDiv = styled.div`
 function ContentList({ cont, handleClick }) {
     return cont.map(function (cont, index) {
         function onClick() {
-            handleClick(index);
+            console.log('tadt')
+            console.log(cont)
+            handleClick(cont);
         }
-
+        
         return (
-            <StyledDiv>
-                <input type="checkbox" value={cont.isComplete} onClick={onClick} />
-                <h2>{cont.id}</h2>
-                <p>{cont.type}</p>
-            </StyledDiv>
+            <div class="result">
+                <a onClick={onClick}>
+                    <StyledDiv>
+
+                        <h2>{cont.id}</h2>
+                        <p>{cont.type}</p>
+
+                    </StyledDiv>
+                </a>
+            </div>
         )
     })
 }
+
+
 
 export default ContentList;
