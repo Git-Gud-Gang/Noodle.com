@@ -42,7 +42,7 @@
   display: block;
   background-color: #f8f9fa;
   color: #3c4043;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Noto Sans', sans-serif;
   font-size: 14px;
   height: 36px;
   margin: 0 auto;
@@ -72,6 +72,7 @@
   margin: 1rem 0;
   height: 44px;
   border-radius: 24px;
+  font-family: 'Noto Sans', sans-serif;
   border: 1px solid #dfe1e5;
   width: 100%;
   padding: 0 16px;
@@ -104,11 +105,11 @@
 .noodle_form {
   position: fixed;
   
-  background: rgba(128, 176, 248, 0.8);
+  background: rgba(114, 102, 99);
   /* background: white; */
   padding: 1rem;
   /* margin-top: 18rem; */
-  
+  font-family: 'Noto Sans', sans-serif;
   width: 35vw;
   bottom: 100px;
   right: 355px;
@@ -138,7 +139,9 @@
   background-color: #f1b1e3;
   border-radius: 4px;
   outline: none;
+  font-family: 'Noto Sans', sans-serif;
   font-size: larger;
+
   padding: 0.5rem 1rem;
   border: none;
 }
@@ -147,6 +150,7 @@
 .noPage {
   /* background-color: #282c34; */
   color: #f8f9fa;
+  font-family: 'Noto Sans', sans-serif;
   height: 100vh;
 }
 
