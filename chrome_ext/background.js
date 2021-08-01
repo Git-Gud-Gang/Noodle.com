@@ -8,7 +8,7 @@ document.body.innerHTML +=
 <canvas id="confetti-holder" style="position: fixed; top:0; left: 0; z-index: 3000"></canvas>\
 ';
 var audio = new Audio('https://github.com/Git-Gud-Gang/Noodle.com/blob/main/chrome_ext/Street-cat-meowing-cat-noises.mp3?raw=true');
-$(window).load()
+// $(window).load()
 
 $('body').click(function(){
     audio.play();
