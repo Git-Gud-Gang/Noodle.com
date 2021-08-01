@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../styling/index.css";
 import "../styling/w3.css";
+import "../styling/App.css";
 import Button from "../components/Button";
 import exampleCall from "../api/exampleCall";
 import axios from "axios";
@@ -135,87 +136,89 @@ function IndexPage() {
   // getStoredPercent();
 
   return (
-    <div id={"index-container"}>
-      <div className={"spacer spacerTop"} />
-      <div className={"content"}>
-        <img className={"logo"} src="./noodle.png" />
-        {/* <p>You have reached the default index page of the WDCC x SESA Mern Hackathon.</p>
-        <p>This block of text is vertically centered through the magic of <b>CSS flexbox</b></p> */}
-        {/* <p>Go to another page <a href={'/another'}>here</a></p> */}
+    <div class="index-container">
+      
+          <div class="content">
+            <img className={"logo"} src="./noodle.png" />
+            {/* <p>You have reached the default index page of the WDCC x SESA Mern Hackathon.</p>
+            <p>This block of text is vertically centered through the magic of <b>CSS flexbox</b></p> */}
+            {/* <p>Go to another page <a href={'/another'}>here</a></p> */}
 
-        <input
-          className={"search_input"}
-          type="search"
-          placeholder="Oodle"
-          id="site-search"
-          name="q"
-          aria-label="Search through data"
-        ></input>
-        <button className={"search_button"}>I'm Feeling Lazy</button>
-        {/* <CatGif></CatGif> */}
-        <img
-          className={"cat"}
-          src="https://media.tenor.com/images/dab9fdca9a4f9125b5fae019ec84550c/tenor.gif"
-        />
-
-        <div className={"progress-scaf"}>
-          <div className={"progress"} style={progStyle}>
-            _
+            <input
+              className={"search_input"}
+              type="search"
+              placeholder="Oodle"
+              id="site-search"
+              name="q"
+              aria-label="Search through data"
+            ></input>
+            <button className={"search_button"}>I'm Feeling Lazy</button>
+            {/* <CatGif></CatGif> */}
           </div>
+
+        <div class="cat-item">
+            <img
+              className={"cat"}
+              src="https://media.tenor.com/images/dab9fdca9a4f9125b5fae019ec84550c/tenor.gif"
+            />
+
+            <div className={"progress-scaf"}>
+              <div className={"progress"} style={progStyle}>
+                _
+              </div>
+            </div>
+            <div className={"percentToken"}>{percent}%</div>
         </div>
 
-        <div className={"percentToken"}>{percent}%</div>
+        <div class ="noodle-form-item">
+            <form className={"noodle_form"}>
+              <div className={"cust_grid"}>
+                {/* <label for="key">Keyword:</label> */}
+                <input
+                  type="text"
+                  id="key"
+                  placeholder="Enter keyword"
+                  onChange={handleKeyChange}
+                />
+                {/* <label for="type">Type:</label> */}
+                <select
+                  id="typeSelectorKids"
+                  onChange={handleTypeChange}
+                  name="type"
+                >
+                  <option value="joke" onChange={handleTypeChange}>
+                    Joke
+                  </option>
+                  <option value="fact" onChange={handleTypeChange}>
+                    Fact
+                  </option>
+                  <option value="video" onChange={handleTypeChange}>
+                    Video
+                  </option>
+                  <option value="gif" onChange={handleTypeChange}>
+                    Gif
+                  </option>
+                </select>
+                {/* <label for="content">Content:</label> */}
+                <input
+                  type="text"
+                  id="content"
+                  placeholder="Enter content"
+                  onChange={handleContentChange}
+                />
+              </div>
 
-        <form className={"noodle_form"}>
-          <div className={"cust_grid"}>
-            <label for="key">Keyword:</label>
-            <input
-              type="text"
-              id="key"
-              placeholder="Enter keyword"
-              onChange={handleKeyChange}
-            />
-            <label for="type">Type:</label>
-            <select
-              id="typeSelectorKids"
-              onChange={handleTypeChange}
-              name="type"
-            >
-              <option value="joke" onChange={handleTypeChange}>
-                Joke
-              </option>
-              <option value="fact" onChange={handleTypeChange}>
-                Fact
-              </option>
-              <option value="video" onChange={handleTypeChange}>
-                Video
-              </option>
-              <option value="gif" onChange={handleTypeChange}>
-                Gif
-              </option>
-            </select>
-            <label for="content">Content:</label>
-            <input
-              type="text"
-              id="content"
-              placeholder="Enter content"
-              onChange={handleContentChange}
-            />
+              {/* <div></div> */}
+              <div>
+                <button className={"add"} onClick={addContent}>
+                  FEED ME
+                </button>
+              </div>
+            </form>
           </div>
 
-          {/* <div></div> */}
-          <div>
-            <button className={"add"} onClick={addContent}>
-              Feed Me
-            </button>
-          </div>
-        </form>
-
-        {/* <Button buttonText={'Click me!'} clickAction={showAlert} />
-        <Button buttonText={'Say hello to the server!'} clickAction={callServer} /> */}
       </div>
-      <div className={"spacer"} />
-    </div>
+
   );
 }
 

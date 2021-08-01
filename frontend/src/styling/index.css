@@ -7,11 +7,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-#index-container {
-  display: flex;
-  flex-flow: column nowrap;
-  height: 100vh;
-}
 
 #index-container .spacer {
   justify-content: space-around;
