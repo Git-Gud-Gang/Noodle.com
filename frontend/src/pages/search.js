@@ -17,7 +17,37 @@ const initialContents = [
   },
   {
     id: "dog",
-    content: "Make the workshop last minute",
+    content: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    type: "video"
+  },
+  {
+    id: "dog",
+    content: "https://media1.giphy.com/media/NVBR6cLvUjV9C/giphy.gif?cid=ecf05e47j0ex6ut524t1gnqf45ltyj8bii6rng6yf15mkh81&rid=giphy.gif&ct=g",
+    type: "gif"
+  },
+  {
+    id: "dog",
+    content: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    type: "video"
+  },
+  {
+    id: "dog",
+    content: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    type: "video"
+  },
+  {
+    id: "dog",
+    content: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    type: "video"
+  },
+  {
+    id: "dog",
+    content: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    type: "video"
+  },
+  {
+    id: "dog",
+    content: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     type: "video"
   }
 ];
@@ -35,6 +65,13 @@ function Search() {
     // newContents[index].description = "Hello World!!"
     // setContents(newContents);
   }
+
+  function noScroll() {
+    window.scrollTo(0, 0);
+  }
+  
+  // add listener to disable scroll
+  window.addEventListener('scroll', noScroll);
 
     return (
       <div>
@@ -78,7 +115,6 @@ function Search() {
         </div>
         
       </div>
-    
   );
 
   
