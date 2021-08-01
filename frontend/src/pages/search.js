@@ -82,12 +82,12 @@ function Search() {
         // console.log('nones');
         var ind = Math.round(Math.random() * (knownKeys.length - 1));
         axios
-          .get(`http://localhost:3001/api/database/${knownKeys[ind]}`)
+          .get(`http://localhost:3001/api/database/rick roll`)
           .then((res) => {
             // console.log('nonassaes');
             // console.log(ind)s
             setContents(res.data);
-            setText(`Did you mean: ${knownKeys[ind]}`);
+            setText(`Did you mean: rick roll`);
           });
       } else {
      console.log(res.data.length)
