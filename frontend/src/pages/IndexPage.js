@@ -4,6 +4,13 @@ import "../styling/w3.css";
 import Button from "../components/Button";
 import exampleCall from "../api/exampleCall";
 import axios from "axios";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useParams,
+} from "react-router-dom";
 
 //import CatGif from '../components/cat.js';
 
@@ -31,6 +38,11 @@ function IndexPage() {
   const [percent, setPercent] = useState(0);
   var timeNow;
 
+  const [item, setItem] = useState("");
+  function handleSearch(event) {
+    setItem(event.target.value)
+  }
+
   useEffect(() => {
     getStoredPercent();
     timeNow = Date.now();
@@ -52,7 +64,9 @@ function IndexPage() {
         // console.log("THIS IS THE PERCEUHAdAJJDADH")
         // console.log(yeet)
         // console.log(percent)
-        setPercent(currentPercent => currentPercent < 5 ? 0 : currentPercent - 5)
+        setPercent((currentPercent) =>
+          currentPercent < 5 ? 0 : currentPercent - 5
+        );
         // updatePercentage(newPercent);
         // var tryPerecent = ;
         // console.log(tryPerecent)
@@ -150,8 +164,10 @@ function IndexPage() {
           id="site-search"
           name="q"
           aria-label="Search through data"
+          onChange ={handleSearch}
         ></input>
-        <button className={"search_button"}>I'm Feeling Lazy</button>
+        
+        <button className={"search_button"}><Link to={`/search/${item}`}>I'm Feeling Lazy</Link></button>
         {/* <CatGif></CatGif> */}
         <img
           className={"cat"}

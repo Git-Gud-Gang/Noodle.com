@@ -15,7 +15,7 @@ function App() {
           <Route exact path={'/'} component={IndexPage} />
           <Route exact path={'/another'} component={AnotherPage} />
           <Route exact path={'/noResult'} component={NoResult} />
-          <Route exact path={'/search'} component={Search} />
+          <Route exact path={'/search/:id'} component={Search} />
 
           {/* Default path if nothing else matches */}
           <Route path={'/'} component={IndexPage} />

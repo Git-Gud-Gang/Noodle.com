@@ -1,8 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styling/index.css';
 import '../styling/App.css';
 import ContentList from '../components/ContentList';
 import SelectEl from '../components/SelectEl';
+import axios from "axios";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useParams
+} from "react-router-dom";
 
 const initialContents = [
   {
@@ -22,10 +30,37 @@ const initialContents = [
   }
 ];
 
+const knownKeys = ['cat', 'clock']
 
 function Search() {
-  const [cont, setContents] = useState(initialContents)
+  let { id } = useParams();
+
+  const [cont, setContents] = useState([])
   const [selected, setSelected] = useState(null)
+
+  useEffect(() => {
+    getStoredPercent();
+  }, [])
+
+  async function getStoredPercent() {
+    axios.get(`http://localhost:3001/api/database/${id}`).then((res) => {
+      if (res.data.length == 0){
+        // console.log('nones');
+        var ind = Math.round((Math.random() * (knownKeys.length - 1)));
+        axios.get(`http://localhost:3001/api/database/${knownKeys[ind]}`).then((res) => {
+
+          // console.log('nonassaes');
+          // console.log(ind)s
+          setContents(res.data);
+        })
+      } else {
+        setContents(res.data);
+      }
+      // return res.data;
+    });
+  }
+
+  
 
   function handleClick(contentEl) {
     setSelected(contentEl)
