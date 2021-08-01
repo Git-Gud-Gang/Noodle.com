@@ -1,16 +1,20 @@
 import styled from "styled-components";
 
+
 const StyledDiv = styled.div`
+
 
     padding: 12px 16px;
     display: block;
-    background-color: white;
-    color: black;
+    background-color: grey;
+    color: white;
+    font-family: 'Noto Sans', sans-serif;
     
     width: 85%;
     margin: auto;
 
-    border: 2px solid black;
+    border: 4px solid white;
+    gap: 20px;
     border-radius: 5px;
 
     display: flex;

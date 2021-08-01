@@ -144,8 +144,10 @@ function Search() {
         <div class="search-container">
           <div class="content-list">
             <p>Search results:</p>
-            <p>{text}</p>
-            <ContentList cont={cont} handleClick={handleClick} />
+            <div class="search-results">
+              <p>{text}</p>
+            </div>
+              <ContentList cont={cont} handleClick={handleClick} />
           </div>
 
           <div class="content-display">
