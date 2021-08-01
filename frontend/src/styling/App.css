@@ -90,11 +90,13 @@
   margin-right: 20px;
   margin-top: 30px;
   outline: none;
+  font-family: 'Noto Sans', sans-serif;
 }
 
 .search{
 
   margin: 1rem 0;
+  font-family: 'Noto Sans', sans-serif;
 
 }
 
@@ -266,6 +268,9 @@
   padding-top: 20px;
   padding-bottom: 50px;
   column-gap: 30px;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .content-list {
@@ -275,6 +280,7 @@
   color: white;
   border-radius: 25px;
   overflow: auto;
+  font-family: 'Noto Sans', sans-serif;
 }
 
 .content-display {
@@ -283,6 +289,11 @@
   background-color:#3c4043;
   color: white;
   border-radius: 25px;
+}
+
+.search-results {
+  color: white;
+  background-color: #272b2e;
 }
 
 .results-container {
