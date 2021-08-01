@@ -19,7 +19,7 @@ const StyledDiv = styled.div`
     justify-content: space-between;
 `
 
-function ContentList({ cont, handleClick }) {
+function ContentList({ cont, handleClick}) {
     return cont.map(function (cont, index) {
         function onClick() {
             // console.log('tadt')

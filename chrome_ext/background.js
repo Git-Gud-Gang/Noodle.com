@@ -1,5 +1,5 @@
 document.body.innerHTML +=
-  '<dialog style="border: none; border-radius: 24px; width: 15vw;">\
+  '<dialog style="border: none; border-radius: 24px; width: 20vw;">\
 <h2> Do you want to feed your cat?</h2><br>\
  <button style="margin-bottom: 10px; display: block; width: 100%; color: white; background-color: #ec759c; padding: 15px; border: none; outline: none; font-size: 24px; border-radius: 12px; height: 10%; font-family: Arial, Helvetica, sans-serif;" class="b1">Feed Meeee</button>\
  <button style="margin-bottom: 30px; display: block; width: 100%; color: black; background-color: pink; padding: 15px; border: none; outline: none; font-size: 24px; border-radius: 12px; height: 10%; font-family: Arial, Helvetica, sans-serif;" class="b2">Stay Productive :[</button>\
@@ -8,9 +8,12 @@ document.body.innerHTML +=
 <canvas id="confetti-holder" style="position: fixed; top:0; left: 0; z-index: 3000"></canvas>\
 ';
 var audio = new Audio('https://github.com/Git-Gud-Gang/Noodle.com/blob/main/chrome_ext/Street-cat-meowing-cat-noises.mp3?raw=true');
+$(window).load()
+
 $('body').click(function(){
     audio.play();
   });
+
 !(function (e, t) {
   "object" == typeof exports && "undefined" != typeof module
     ? (module.exports = t())

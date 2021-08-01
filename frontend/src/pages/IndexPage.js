@@ -152,7 +152,7 @@ function IndexPage() {
     <div id={"index-container"}>
       <div className={"spacer spacerTop"} />
       <div className={"content"}>
-        <img className={"logo"} src="./noodle.png" />
+        <img className={"logo"} src="../noodle.png" />
         {/* <p>You have reached the default index page of the WDCC x SESA Mern Hackathon.</p>
         <p>This block of text is vertically centered through the magic of <b>CSS flexbox</b></p> */}
         {/* <p>Go to another page <a href={'/another'}>here</a></p> */}
