@@ -179,12 +179,19 @@
   width: 220px;
   bottom: 110px;
   left: 356px;
-  color: white;
+  color: #f1b1e3;
   border-radius: 5px;
 }
 
 .progress{
   background-color: #f1b1e3;
-  width: 55px;
   border-radius: 5px;
+}
+
+.percentToken{
+  color: white;
+  position: fixed;
+  bottom: 76px;
+  font-size: 20px;
+  left: 450px;
 }

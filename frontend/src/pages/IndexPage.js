@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styling/index.css";
 import "../styling/w3.css";
 import Button from "../components/Button";
@@ -21,13 +21,86 @@ import axios from "axios";
 // }
 
 function IndexPage() {
+  // console.log(initPercent);
+
   const [keyword, setKeyword] = useState(
     "asasdfhudsfhsufhusdhfudhfusdhfuojsifd"
   );
   const [content, setContent] = useState("");
   const [myType, setType] = useState("joke");
+  const [percent, setPercent] = useState(0);
+  var timeNow;
 
-  async function addContent() {
+  useEffect(() => {
+    getStoredPercent();
+    timeNow = Date.now();
+  }, []);
+
+  useEffect(() => {
+    // const timer = window.setInterval(() => {
+    //   setTime(prevTime => prevTime + 1); // <-- Change this line!
+    // }, 1000);
+    // return () => {
+    //   window.clearInterval(timer);
+    // };
+    // };
+
+    const interval = setInterval(() => {
+      // e.preventDefault();
+      if (Date.now() - timeNow > 10) {
+        // var yeet = getStoredPercent()
+        // console.log("THIS IS THE PERCEUHAdAJJDADH")
+        // console.log(yeet)
+        // console.log(percent)
+        setPercent(currentPercent => currentPercent < 5 ? 0 : currentPercent - 5)
+        // updatePercentage(newPercent);
+        // var tryPerecent = ;
+        // console.log(tryPerecent)
+        // updatePercentage(tryPerecent);
+      }
+    }, 10000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    axios
+      .put("http://localhost:3001/api/status", {
+        status: percent,
+      })
+      .then((res) => {
+        // setPercent(newPercent);
+      });
+  }, [percent]);
+
+  async function getStoredPercent() {
+    axios.get("http://localhost:3001/api/status").then((res) => {
+      setPercent(res.data);
+      // return res.data;
+    });
+  }
+
+  // async function updatePercentage(newPercent) {
+  //   // console.log(newPercent);
+  //   axios
+  //     .put("http://localhost:3001/api/status", {
+  //       status: newPercent,
+  //     })
+  //     .then((res) => {
+  //       setPercent(newPercent);
+  //     });
+  // }
+
+  let progStyle = {
+    width: `${getStatus(percent)}px`,
+  };
+
+  function getStatus(percent) {
+    return (percent / 100) * 220;
+  }
+
+  async function addContent(e) {
+    e.preventDefault();
     axios
       .post("http://localhost:3001/api/database", {
         id: keyword,
@@ -35,7 +108,10 @@ function IndexPage() {
         type: myType,
       })
       .then((res) => {
-        console.log(res);
+        var newPercent = percent >= 100 ? 100 : percent + 5;
+        setPercent(newPercent);
+        // timeNow = Date.now();
+        // console.log(res);
       });
   }
 
@@ -55,6 +131,8 @@ function IndexPage() {
   function handleContentChange(event) {
     setContent(event.target.value);
   }
+
+  // getStoredPercent();
 
   return (
     <div id={"index-container"}>
@@ -79,9 +157,15 @@ function IndexPage() {
           className={"cat"}
           src="https://media.tenor.com/images/dab9fdca9a4f9125b5fae019ec84550c/tenor.gif"
         />
+
         <div className={"progress-scaf"}>
-          <div className={"progress"}>_</div>
+          <div className={"progress"} style={progStyle}>
+            _
+          </div>
         </div>
+
+        <div className={"percentToken"}>{percent}%</div>
+
         <form className={"noodle_form"}>
           <div className={"cust_grid"}>
             <label for="key">Keyword:</label>
@@ -92,7 +176,11 @@ function IndexPage() {
               onChange={handleKeyChange}
             />
             <label for="type">Type:</label>
-            <select id="typeSelectorKids" onChange={handleTypeChange} name="type">
+            <select
+              id="typeSelectorKids"
+              onChange={handleTypeChange}
+              name="type"
+            >
               <option value="joke" onChange={handleTypeChange}>
                 Joke
               </option>
@@ -117,7 +205,7 @@ function IndexPage() {
 
           {/* <div></div> */}
           <div>
-            <button className={"add"} type="submit" onClick={addContent}>
+            <button className={"add"} onClick={addContent}>
               Feed Me
             </button>
           </div>
