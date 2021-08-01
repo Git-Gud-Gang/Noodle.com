@@ -22,11 +22,11 @@ const StyledDiv = styled.div`
 function ContentList({ cont, handleClick }) {
     return cont.map(function (cont, index) {
         function onClick() {
-            console.log('tadt')
-            console.log(cont)
+            // console.log('tadt')
+            // console.log(cont)
             handleClick(cont);
         }
-        
+
         return (
             <div class="result">
                 <a onClick={onClick}>
