@@ -5,6 +5,13 @@ import "../styling/App.css";
 import Button from "../components/Button";
 import exampleCall from "../api/exampleCall";
 import axios from "axios";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useParams,
+} from "react-router-dom";
 
 //import CatGif from '../components/cat.js';
 
@@ -32,6 +39,11 @@ function IndexPage() {
   const [percent, setPercent] = useState(0);
   var timeNow;
 
+  const [item, setItem] = useState("");
+  function handleSearch(event) {
+    setItem(event.target.value)
+  }
+
   useEffect(() => {
     getStoredPercent();
     timeNow = Date.now();
@@ -53,7 +65,9 @@ function IndexPage() {
         // console.log("THIS IS THE PERCEUHAdAJJDADH")
         // console.log(yeet)
         // console.log(percent)
-        setPercent(currentPercent => currentPercent < 5 ? 0 : currentPercent - 5)
+        setPercent((currentPercent) =>
+          currentPercent < 5 ? 0 : currentPercent - 5
+        );
         // updatePercentage(newPercent);
         // var tryPerecent = ;
         // console.log(tryPerecent)
@@ -136,6 +150,7 @@ function IndexPage() {
   // getStoredPercent();
 
   return (
+
     <div class="index-container">
       
           <div class="content">
