@@ -21,6 +21,7 @@ const initialContents = [
   }
 ];
 
+
 function Search() {
   const [cont, setContents] = useState(initialContents)
 
@@ -31,42 +32,53 @@ function Search() {
     setContents(newContents);
   }
 
+    return (
+      <div>
+        <div className={'searchPage'}>
+        <a href={'/'}>
+          <img className={"search_page_logo"} src="./noodle.png" />
+          </a>
+          <input
 
-  return (
-    <div>
-      <div className={'searchPage'}>
-        <img className={"search_page_logo"} src="./noodle.png" />
-        <input
           className={"search_page_input"}
           type="search"
           placeholder="Search"
           id="site-search"
           name="q"
           aria-label="Search through data"
-        ></input>
-        <button className={"search_page_button"}>I'm Feeling Lazy</button>
-        <div class="search_page_term">
-          Showing results for:
-        </div>
-        <div class="results">
 
-          <nav>
-            <ul>
-              <li class="nav-item"><a href="#">Home</a></li>
-              <li class="nav-item"><a href="#">Products</a></li>
-              <li class="nav-item"><a href="#">Store</a></li>
-              <li class="nav-item"><a href="#">Team</a></li>
-            </ul>
-          </nav>
+          ></input>
+          <button className={"search_page_button"}>I'm Feeling Lazy</button>
+          
 
+            <div class="search-container">
 
-          <ContentList cont={cont} handleClick={handleClick} />
+                <div class="content-list">
+                <p>
+                    Search results:
+                </p>
+                    <nav>
+                      <ul>
+                        <li class="nav-item"><a href="#">Home</a></li>
+                        <li class="nav-item"><a href="#">Products</a></li>
+                        <li class="nav-item"><a href="#">Store</a></li>
+                        <li class="nav-item"><a href="#">Team</a></li>
+                      </ul>
+                    </nav>
+                <ContentList cont={cont} handleClick={handleClick} />
 
+                </div>
+
+                <div class="content-display">
+                <p>
+                    View results here:
+                </p>
+                </div>
+
+           </div>
 
         </div>
       </div>
-
-    </div>
 
   );
 }
