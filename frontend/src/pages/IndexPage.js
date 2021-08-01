@@ -184,14 +184,14 @@ function IndexPage() {
 
         <form className={"noodle_form"}>
           <div className={"cust_grid"}>
-            <label for="key">Keyword:</label>
+        
             <input
               type="text"
               id="key"
               placeholder="Enter keyword"
               onChange={handleKeyChange}
             />
-            <label for="type">Type:</label>
+         
             <select
               id="typeSelectorKids"
               onChange={handleTypeChange}
@@ -210,7 +210,7 @@ function IndexPage() {
                 Gif
               </option>
             </select>
-            <label for="content">Content:</label>
+         
             <input
               type="text"
               id="content"
@@ -222,7 +222,7 @@ function IndexPage() {
           {/* <div></div> */}
           <div>
             <button className={"add"} onClick={addContent}>
-              Feed Me
+              FEED ME
             </button>
           </div>
         </form>
